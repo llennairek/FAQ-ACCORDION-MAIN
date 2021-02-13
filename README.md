@@ -1,4 +1,4 @@
-##My solution :
+## My solution :
 https://faq-accordion-main-mocha.vercel.app/
 # Frontend Mentor - FAQ Accordion Card
 
