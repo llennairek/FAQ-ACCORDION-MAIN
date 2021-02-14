@@ -2,7 +2,6 @@ const questionsContainer = document.querySelectorAll(".questions-container");
 const questions = document.querySelectorAll(".questions");
 
 function display(event) {
-  console.log(event);
   const childrens = this.children;
   if(!childrens[2].classList.contains("active")) {
     childrens[0].classList.add("questions-active");
