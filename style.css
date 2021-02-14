@@ -94,6 +94,19 @@ font-weight: 700;
   height: 60%;
 }
 
+button {
+  background-color: white;
+  border: none;
+  text-align: left;
+  font: inherit;
+  padding: 0;
+}
+
+button:focus {
+  color: hsl(14, 88%, 65%);
+  outline: none;
+}
+
 .questions-container {
   border-bottom: 1px solid hsl(240, 5%, 91%);
   margin-right: 8.5em;
