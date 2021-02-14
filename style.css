@@ -6,7 +6,7 @@
 
 body{
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;  
   margin: 0;
   background: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
   font-size: 12px;
@@ -16,16 +16,13 @@ body{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  overflow: hidden;
 }
 
 #main-container {
   position: relative;
-  height: 60%;
   width: 80%;
   max-width: 920px;
-  min-height: 505px;
-  max-height: 505px;
+  min-height: 505px;  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,21 +30,37 @@ body{
 #card-container {
   position: relative;
   width: 100%;
-  height: 100%;  
+  min-height: 505px;  
   display: flex;
   background-color: white;
   border-radius: 20px;
-  overflow: hidden;
+  
 }
 .card-panel {
   width: 50%;
   height: 100%;
 }
 
+
+
+#illustration {
+  width: 50%;
+  min-height: 100%;
+  height: 100%;  
+}
+
+#illustration-woman-container {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+}
+
 #bg-pattern {
- position: absolute;
- left: -580px;
- top:-300px;
+  position: absolute;
+  left: -580px;
+  top: 30%;
+  transform: translateY(-50%);
 }
 
 #illustration-woman {
@@ -58,10 +71,11 @@ body{
   z-index: 2;
 }
 
+
 #box {
   position: absolute;
-  top: 205px;
-  /* transform: translateY(-50%); */
+  top: 59%;
+  transform: translateY(-50%);
   left: -95px;
   z-index: 3;
 }
@@ -87,17 +101,23 @@ font-weight: 700;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .questions {
   margin: 20px 0;
   font-size: 1.2em;
   font-weight: 400;
-  transition: all 1s;
+  transition: all 0.4s;
 }
 
 .questions-active {
   font-weight: 700;
+}
+
+.questions:focus {
+  color: hsl(14, 88%, 65%);
+  outline: none;
 }
 
 .answers {
@@ -106,7 +126,7 @@ font-weight: 700;
   max-height: 0;  
   opacity: 0;
   line-height: 1.5em;
-  transition: max-height 1s ease-out, opacity 0.5s;  
+  transition: max-height 0.5s ease-out, opacity 0.2s;  
 }
 
 .active {
@@ -121,9 +141,11 @@ font-weight: 700;
   position: absolute;
   top: 2em;
   right: 1em;
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
-
+.questions-container:hover {
+  color: hsl(14, 88%, 65%);
+}
 .arrow:hover {
   transform: scale(1.2);
 } 
@@ -138,13 +160,17 @@ font-weight: 700;
 }
 
 .attribution {
-  margin-top: 10vh;
+  margin-top: 15vh;
 }
 
 @media screen and (max-width: 1100px) {
   .questions-container {
     margin-right: 1em;
     margin-left: 5em;
+  }
+
+  #title {
+    margin-left: 2em;
   }
 }
 
@@ -158,12 +184,20 @@ font-weight: 700;
   #card-container {
     margin-top: 200px;
     flex-direction: column;
-    height: 100%;
+    min-height: 100%;    
     overflow: visible;
+    padding-bottom: 20px;
   }
 
   .card-panel {
     width: 100%;
+  }
+
+  #illustration-woman-container {
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    overflow: visible;
   }
 
   #title {
@@ -180,7 +214,7 @@ font-weight: 700;
 
   #box {
     width: 30%;
-    top: 58px;
+    top: 0;
     left: 38px;
   }
 
@@ -196,7 +230,7 @@ font-weight: 700;
   }
 
   #faq {
-    margin-top: -30px;
+    margin-top: 100px;
     overflow: hidden;
   }
 
@@ -205,10 +239,10 @@ font-weight: 700;
   }
 
   #faq-container {
-    height: 80%;
+    min-height: 80%;
   }  
 
   .attribution {
-    margin-top: 20vh;
+    margin-top: 15vh;
   }
 }
